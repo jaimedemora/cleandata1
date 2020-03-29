@@ -30,7 +30,7 @@ features <- read.table("UCI HAR Dataset/features.txt", header=FALSE)
 activity_labels <- read.table("UCI HAR Dataset/activity_labels.txt", header=FALSE)
 subject_train <- read.table("UCI HAR Dataset/train/subject_train.txt", header=FALSE)
 x_train <- read.table("UCI HAR Dataset/train/x_train.txt", header=FALSE)
-y_test <- read.table("UCI HAR Dataset/train/y_train.txt", header=FALSE)
+y_train <- read.table("UCI HAR Dataset/train/y_train.txt", header=FALSE)
 
 
 colnames(activity_labels) = c("activityId", "activityType")
@@ -80,3 +80,5 @@ tidy <- dcast(melted, subjectId+activityType ~ variable, mean)
 
 # write the tidy data set to a file
 write.csv(tidy, "tidy.csv", row.names=FALSE)
+write.table(tidy, "tidy.txt", row.names = FALSE)
+
