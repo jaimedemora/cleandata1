@@ -15,7 +15,7 @@
 # 5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. 
 
 ##########################################################################################################
-
+library(reshape2)
 file_name <- "getdata_dataset.zip"
 
 if(!file.exists(file_name)){
